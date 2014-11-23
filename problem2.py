@@ -1,6 +1,13 @@
+fibMap = dict()
+fibMap[1] = 1
+fibMap[2] = 1
+
 def fib(n):
-	if(n <= 2): return 1;
-	return fib(n-1) + fib(n-2)
+	if(n in fibMap.keys()):
+		return fibMap[n]
+
+	fibMap[n] = fibMap[n-1] + fibMap[n-2]
+	return fibMap[n]
 
 i=1
 sum = 0
